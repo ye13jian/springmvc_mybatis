@@ -22,21 +22,24 @@
 			</beans:list>
 		</beans:property>
 	</beans:bean>
-	<annotation-driven>
+	<!-- <annotation-driven>
 		<message-converters>
 			<beans:ref bean="mappingJacksonHttpMessageConverter"/>
 		</message-converters>
-	</annotation-driven>
+	</annotation-driven> -->
 	
 	<!-- 启动SpringMVC注解功能，完成请求和POJO注解映射 -->
-	<!-- <beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
+	<beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter">
 		<beans:property name="messageConverters">
 			<beans:list>
-				JSON转换器
+				<!-- JSON转换器 -->
 				<beans:ref bean="mappingJacksonHttpMessageConverter"/>
 			</beans:list>
 		</beans:property>
-	</beans:bean> -->
+	</beans:bean>
+	
+	<!-- url注册 -->
+	<beans:bean class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping"/>
 	
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
 	<resources mapping="/resources/**" location="/resources/" />
