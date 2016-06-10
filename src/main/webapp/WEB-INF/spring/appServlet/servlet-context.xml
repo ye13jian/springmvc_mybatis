@@ -8,6 +8,9 @@
 		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
 	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+		
+	<!-- 扫描@Controller注解 -->
+	<context:component-scan base-package="com.jianye.springmvc.controller" />
 	
 	<!-- Enables the Spring MVC @Controller programming model -->
 	<!-- 避免IE下出现下载下载JSON的情况 -->
@@ -38,9 +41,6 @@
 		<beans:property name="prefix" value="/WEB-INF/views/" />
 		<beans:property name="suffix" value=".jsp" />
 	</beans:bean>
-	
-	<!-- 扫描@Controller注解 -->
-	<context:component-scan base-package="com.jianye.springmvc.controller" />
 	
 	<!-- 多文件上传配置 -->
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
