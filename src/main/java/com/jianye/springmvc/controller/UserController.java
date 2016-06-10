@@ -14,7 +14,7 @@ import com.jianye.springmvc.model.UserInfo;
 import com.jianye.springmvc.service.UserService;
 
 @Controller
-// @RequestMapping(value="/user")
+@RequestMapping(value="/user")
 public class UserController {
 	
 	private static final Logger logger = Logger.getLogger(UserController.class);
@@ -22,7 +22,7 @@ public class UserController {
 	@Autowired
 	private UserService userService;
 	
-	@RequestMapping(value="/user/showInfo/{userId}")
+	@RequestMapping(value="/showInfo/{userId}")
 	public String showUserInfo(ModelMap modelMap, @PathVariable int userId) {
 		logger.info("UserId：" + userId);
 		UserInfo userInfo = userService.getUserById(userId);
