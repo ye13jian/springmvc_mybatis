@@ -68,4 +68,22 @@
       unumer = #{unumer,jdbcType=INTEGER}
     where id = #{id,jdbcType=INTEGER}
   </update>
+  
+  <!-- 结果集映射 -->
+  <resultMap id="UserCourseMap" type="com.jianye.springmvc.model.UserInfo" extends="BaseResultMap">
+  	<collection property="courseInfos" javaType="list" ofType="com.jianye.springmvc.model.CourseInfo">  
+	    <id property="id" column="course_id" jdbcType="INTEGER" />  
+	    <result property="cname" column="cname" jdbcType="VARCHAR" />  
+	    <result property="caddress" column="caddress" jdbcType="VARCHAR" />
+    </collection>  
+  </resultMap>
+  
+  <!-- 查询结果 -->
+  <select id="selectAll" resultMap="UserCourseMap">
+  		select u.id, u.uname,  
+        u.unumer, c.id course_id, c.cname, c.caddress from user_info u left  
+        join course_user_info cu on u.id = cu.uid  
+        left join course_info c on  
+        cu.cid = c.id 
+  </select>
 </mapper>

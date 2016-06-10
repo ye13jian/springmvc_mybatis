@@ -1,11 +1,15 @@
 package com.jianye.springmvc.model;
 
+import java.util.List;
+
 public class UserInfo {
     private Integer id;
 
     private String uname;
 
     private Integer unumer;
+    
+    private List<CourseInfo> courseInfos;
 
     public Integer getId() {
         return id;
@@ -30,4 +34,12 @@ public class UserInfo {
     public void setUnumer(Integer unumer) {
         this.unumer = unumer;
     }
+    
+    public void setCourseInfos(List<CourseInfo> courseInfos) {
+		this.courseInfos = courseInfos;
+	}
+    
+    public List<CourseInfo> getCourseInfos() {
+		return courseInfos;
+	}
 }

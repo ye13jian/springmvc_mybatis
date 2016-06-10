@@ -1,5 +1,7 @@
 package com.jianye.springmvc.dao;
 
+import java.util.List;
+
 import com.jianye.springmvc.model.UserInfo;
 
 public interface UserInfoMapper {
@@ -14,4 +16,6 @@ public interface UserInfoMapper {
     int updateByPrimaryKeySelective(UserInfo record);
 
     int updateByPrimaryKey(UserInfo record);
+
+	List<UserInfo> selectAll();
 }
