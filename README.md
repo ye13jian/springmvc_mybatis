@@ -6,3 +6,5 @@ pause
 ### 请求路径
 http://localhost:8080/springmvc/user/showInfo/1.html  
 http://localhost:8080/springmvc/user/userInfos.html  
+###### github地址
+https://github.com/ye13jian/springmvc_mybatis.git  
